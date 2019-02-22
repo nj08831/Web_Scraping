@@ -1,0 +1,132 @@
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mars News</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+    
+    <body>
+      <div clas="container">
+        <div class="jumbotron text-center text-white" style="background-color:rgb(201, 73, 73);">
+          <h1 ><bold>Mission to Mars</bold></h1>
+          <br>
+          <br>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="background-color:rgb(50, 52, 53);"><em>What's new with Mars?</em></a></p>
+        </div>
+          
+        <!-- News Article -->
+        <div class="row">
+          <div class="col-sm-12">
+            <h2><strong><center>Latest Mars News</center></strong></h2>
+            <h4><em><center>{{ mars['nasa_title'] }}</center></em></h4>
+            <p><center>{{ mars['nasa_article'] }}</center></p>
+          </div>
+        </div>
+
+<!-- Featured Images + (Current Weather + Facts Table) -->
+<div class = "row">
+        <div class = "col-sm-12 col-md-6">
+            <br>
+           <img src = {{ mars['mars_featured_image'] }} width='500' height='500' class="center" hspace="70" vspace="20">
+        </div>
+        <br>
+        <br>
+        <div class = "col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h3><center>Mars Weather</center></h3>
+                    {{ mars['mars_weather'] }}
+                  </div>
+                </div>
+                
+                <div class = "row">
+                  <h3><strong><center>Mars Facts</center></strong></h3>
+                  <table class="table table-bordered table-hover table-condensed">
+                    <thead><tr><th title="Field #1">Mars_Fact_Description</th>
+                    <th title="Field #2">Mars_Value</th>
+                    </tr></thead>
+                    <tbody><tr>
+                    <td>Polar Diameter:</td>
+                    <td>6,752 km</td>
+                    </tr>
+                    <tr>
+                    <td>Mass:</td>
+                    <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                    </tr>
+                    <tr>
+                    <td>Moons:</td>
+                    <td>2 (Phobos &amp; Deimos)</td>
+                    </tr>
+                    <tr>
+                    <td>Orbit Distance:</td>
+                    <td>227,943,824 km (1.52 AU)</td>
+                    </tr>
+                    <tr>
+                    <td>Orbit Period:</td>
+                    <td>687 days (1.9 years)</td>
+                    </tr>
+                    <tr>
+                    <td>Surface Temperature:</td>
+                    <td>-153 to 20 Â°C</td>
+                    </tr>
+                    <tr>
+                    <td>First Record:</td>
+                    <td>2nd millennium BC</td>
+                    </tr>
+                    <tr>
+                    <td>Recorded By:</td>
+                    <td>Egyptian astronomers</td>
+                    </tr>
+                    </tbody></table>
+                </div>
+              </div>
+            </div>
+   
+            <div class = "row">
+                    <div class = "col-sm-12">
+                      <h2><strong><center>Mars Hemispheres</center></strong></h2>
+                    <div class = "row">
+                      <div class = "col-sm-6">
+                        <div class = "thumbnail">
+                          <img src = "{{ mars['aimage_url'][0] }}" alt = "{{ mars['atitle'][0] }}">
+                          <div class = "caption">
+                            <h3 class = "main_text"><strong><center> {{ mars.atitle[0]}} </strong></center></h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class = "col-sm-6">
+                        <div class = "thumbnail">
+                          <img src = "{{ mars['aimage_url'][1]}}" alt = "{{ mars['atitle'][1]}}">
+                          <div class = "caption">
+                            <h3 class = "main_text"><strong><center> {{ mars['atitle'][1] }} </strong></center></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "row">
+                            <div class = "col-sm-6">
+                              <div class = "thumbnail">
+                                <img src = "{{ mars['aimage_url'][2] }}" alt = "{{ mars['atitle'][2] }}">
+                                <div class = "caption">
+                                  <h3 class = "main_text"><strong><center> {{ mars['atitle'][2] }} </strong></center></h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div class = "col-sm-6">
+                              <div class = "thumbnail">
+                                <img src = "{{ mars['aimage_url'][3] }}" alt = "{{ mars['atitle'][3] }}">
+                                <div class = "caption">
+                                  <h3 class = "main_text"><strong><center> {{ mars['atitle'][3] }} </strong></center></h3>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+
+</body>
+</html>
